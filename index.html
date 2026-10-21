@@ -14,14 +14,14 @@ button.ghost{background:transparent;color:#ffd77a}
 .tc{width:31%;aspect-ratio:2/3.3;position:relative;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.3,1.4,.5,1)}
 .tc.flip{transform:rotateY(180deg)}.tc>div{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px;border:2px solid #ffd77a}
 .back{background:repeating-linear-gradient(45deg,#4a2177 0 8px,#3a1660 8px 16px);font-size:2rem}
-.front{transform:rotateY(180deg);background:linear-gradient(#fff4d6,#e9cf94);color:#2a1440}.front .e{font-size:2.2rem}.front small{font-family:"Cinzel Decorative";font-size:.62rem;line-height:1.2}
+.front{transform:rotateY(180deg);background:linear-gradient(#fff4d6,#e9cf94);color:#2a1440}.front .e{font-size:2.2rem}.front small{word-break:break-word;font-family:"Cinzel Decorative";font-size:.62rem;line-height:1.2}
 .reading p{line-height:1.5;margin:.6em 0}.reading p:first-letter{font-size:1.5em;color:#ffd77a}.fade{animation:fd 1.2s both}@keyframes fd{from{opacity:0;transform:translateY(8px)}}
 .lucky{text-align:center;font-size:1.1rem}.lucky b{font-size:1.5rem;color:#ffd77a;display:block}.hide{display:none}img.share{width:100%;border-radius:12px;margin-top:10px}
-</style></head><body><main>
+button{min-height:44px}</style></head><body><main>
 <h1>✦ Grocery Horoscope ✦</h1><p class="sub">Your cart knows things. Let it speak.</p>
 <div class="box lucky" id="lucky"></div>
-<div class="box"><label>Enter thy cart, one item per line (or commas):</label><textarea id="cart" placeholder="bananas&#10;hot sauce&#10;frozen pizza&#10;eggs"></textarea>
-<button id="read">🔮 Read My Fate</button><button class="ghost" id="ex">Use a sample cart</button></div>
+<div class="box"><label>Enter thy cart, one item per line (or commas):</label><textarea id="cart" maxlength="3000" aria-label="Cart items" placeholder="bananas&#10;hot sauce&#10;frozen pizza&#10;eggs"></textarea>
+<p id="msg" role="alert" style="color:#ffb4b4;min-height:1em;margin:6px 0"></p><button id="read">🔮 Read My Fate</button><button class="ghost" id="ex">Use a sample cart</button></div>
 <section id="res" class="hide"><div class="cards" id="cards"></div><div class="box reading" id="reading"></div>
-<button id="share">📜 Share as Image</button><img class="share hide" id="img" alt="horoscope image"><a id="dl" class="hide" download="grocery-horoscope.png"></a></section>
+<button id="share">📜 Share as Image</button><p id="msg2" style="text-align:center;font-size:.9rem"></p><img class="share hide" id="img" alt="horoscope image"><a id="dl" class="hide" download="grocery-horoscope.png"></a></section>
 </main><canvas id="cv" width="1080" height="1350" style="display:none"></canvas><script src="app.js"></script></body></html>
